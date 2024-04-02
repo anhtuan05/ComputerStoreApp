@@ -14,7 +14,10 @@ public class UserDataSource {
     private SQLiteDatabase database;
 
     private ComputerStoreSQLiteHelper dbHelper;
-    private String[] allColumns = {ComputerStoreSQLiteHelper.COLUMN_USERID, ComputerStoreSQLiteHelper.COLUMN_USERNAME, ComputerStoreSQLiteHelper.COLUMN_PASSWORD, ComputerStoreSQLiteHelper.COLUMN_EMAIL, ComputerStoreSQLiteHelper.COLUMN_NUMBERPHONE, ComputerStoreSQLiteHelper.COLUMN_USERROLE};
+    private String[] allColumns = {ComputerStoreSQLiteHelper.COLUMN_USERID,
+            ComputerStoreSQLiteHelper.COLUMN_USERNAME, ComputerStoreSQLiteHelper.COLUMN_PASSWORD,
+            ComputerStoreSQLiteHelper.COLUMN_EMAIL, ComputerStoreSQLiteHelper.COLUMN_NUMBERPHONE,
+            ComputerStoreSQLiteHelper.COLUMN_USERROLE};
 
     public UserDataSource(Context context) {
         dbHelper = new ComputerStoreSQLiteHelper(context);

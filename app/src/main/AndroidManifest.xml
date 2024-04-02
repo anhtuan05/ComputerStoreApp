@@ -12,6 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComputerStoreApp"
         tools:targetApi="31">
+
+        <!--      ADMIN_Activity          -->
+        <activity
+            android:name=".AdminActivity"
+            android:exported="true" />
+        <!--      USER_Activity          -->
+        <activity
+            android:name=".UserActivity"
+            android:exported="true" />
+
+        <!--    Login and Register Activity    -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -25,7 +36,9 @@
         <activity
             android:name=".RegisterActivity"
             android:exported="true"
-            android:parentActivityName=".LoginActivity"/>
+            android:parentActivityName=".LoginActivity" />
+
+
     </application>
 
 </manifest>

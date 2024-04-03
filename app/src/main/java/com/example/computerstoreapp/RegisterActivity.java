@@ -3,6 +3,8 @@ package com.example.computerstoreapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,6 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
         editTextNewConfirmPassword = findViewById(R.id.editTextNewConfirmPassword);
         editTextNewEmail = findViewById(R.id.editTextNewEmail);
         editTextNewPhoneNumber = findViewById(R.id.editTextNewPhoneNumber);
+
         buttonRegister = findViewById(R.id.buttonRegister);
 
         userDataSource = new UserDataSource(this);
@@ -54,18 +57,25 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
         } else {
 
-            long userId = 0;
-            if (newPassword.equals(newConfirmPassword)) {
-                userId = userDataSource.userCreate(newUsername, newPassword, newEmail, newPhoneNumber);
+            if (newPassword.equals(newConfirmPassword) && (isValidEmail(newEmail))) {
+                long userId = userDataSource.userCreate(newUsername, newPassword, newEmail, newPhoneNumber);
+                if (userId != -1) {
+                    Toast.makeText(this, "User created successfully", Toast.LENGTH_SHORT).show();
+                    // You may add further actions here, such as navigating to another activity
+                } else {
+                    Toast.makeText(this, "Username already exists", Toast.LENGTH_SHORT).show();
+                }
             }
-            if (userId != -1) {
-                Toast.makeText(this, "User created successfully", Toast.LENGTH_SHORT).show();
-                // You may add further actions here, such as navigating to another activity
-            } else {
-                Toast.makeText(this, "Username already exists", Toast.LENGTH_SHORT).show();
+            else{
+                Toast.makeText(this, "Email or Password invalid", Toast.LENGTH_SHORT).show();
             }
+
         }
 
+    }
+
+    private boolean isValidEmail(String email){
+        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
     @Override

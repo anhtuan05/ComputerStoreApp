@@ -6,7 +6,7 @@
   </component>
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -24,12 +24,15 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="360ac838-857f-4a44-b790-745decf55659" object-ref="schemas/main/tables/Orders" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="360ac838-857f-4a44-b790-745decf55659" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="360ac838-857f-4a44-b790-745decf55659" dataset="main.Orders" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="360ac838-857f-4a44-b790-745decf55659" dataset="main.OrderDetail" active-filter-id="EMPTY_FILTER">
       <filter id="d51392e2-360e-41fe-8258-3634a917067b" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="orderid" operator="=" value="" active="true" />

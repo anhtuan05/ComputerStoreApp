@@ -43,6 +43,7 @@ public class ComputerStoreSQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ORDERID = "orderid";
     public static final String COLUMN_ORDERDATE = "orderdate";
     public static final String COLUMN_STATUS = "status";
+    public static final String COLUMN_ADDRESS = "address";
 
     // Tên cột cho bảng OrderDetail
 
@@ -56,7 +57,7 @@ public class ComputerStoreSQLiteHelper extends SQLiteOpenHelper {
             {COLUMN_USERID, COLUMN_USERNAME, COLUMN_PASSWORD, COLUMN_EMAIL, COLUMN_NUMBERPHONE, COLUMN_USERROLE}, // Cột cho bảng User
             {COLUMN_PRODUCTID, COLUMN_NAME, COLUMN_DESCRIPTION, COLUMN_PRICE, COLUMN_QUANTITY, COLUMN_ACTIVE, COLUMN_IMG, COLUMN_CATEGORIESID}, // Cột cho bảng Products
             {COLUMN_CATEGORIESID, COLUMN_NAME}, // Cột cho bảng Categories
-            {COLUMN_ORDERID, COLUMN_USERID, COLUMN_ORDERDATE, COLUMN_STATUS}, // Cột cho bảng Orders
+            {COLUMN_ORDERID, COLUMN_USERID, COLUMN_ORDERDATE, COLUMN_ADDRESS,COLUMN_STATUS}, // Cột cho bảng Orders
             {COLUMN_ORDERID, COLUMN_PRODUCTID, COLUMN_QUANTITY}, // Cột cho bảng OrderDetail
             {COLUMN_REVIEWID, COLUMN_PRODUCTID, COLUMN_USERID, COLUMN_RATING, COLUMN_COMMENT} // Cột cho bảng Review
     };
@@ -93,6 +94,7 @@ public class ComputerStoreSQLiteHelper extends SQLiteOpenHelper {
             COLUMNS[3][1] + " INTEGER," +
             COLUMNS[3][2] + " TEXT," +
             COLUMNS[3][3] + " TEXT," +
+            COLUMNS[3][4] + " TEXT," +
             "FOREIGN KEY (" + COLUMNS[3][1] + ") REFERENCES " + TABLE_USER + "(" + COLUMN_USERID + "))";
 
     // Câu lệnh SQL để tạo bảng OrderDetail

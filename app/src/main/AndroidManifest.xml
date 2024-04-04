@@ -25,7 +25,8 @@
         <!--    Login and Register Activity    -->
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.L_R_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -36,8 +37,8 @@
         <activity
             android:name=".RegisterActivity"
             android:exported="true"
-            android:parentActivityName=".LoginActivity" />
-
+            android:parentActivityName=".LoginActivity"
+            android:theme="@style/Theme.L_R_Activity"/>
 
     </application>
 

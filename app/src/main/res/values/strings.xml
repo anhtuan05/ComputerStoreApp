@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Computer Store App</string>
+    <string name="user_nav_home_store">Home</string>
+    <string name="user_nav_shopping_cart">Cart</string>
+    <string name="user_nav_shopping_history">History</string>
+    <string name="user_nav_account">Account</string>
+    <string name="user_nav_logout">Logout</string>
+    
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
 </resources>

@@ -50,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                     sessionManager.setUsername(user.getUsername());
                     sessionManager.setUserid(user.getUserid());
                     sessionManager.setUserrole(user.getUserrole());
+                    sessionManager.setUsergmail(user.getEmail());
 
                     if (user.getUserrole() == 1) {
                         startActivity(new Intent(LoginActivity.this, AdminActivity.class));

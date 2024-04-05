@@ -7,6 +7,8 @@ public class UserSessionManager {
     private int userid;
     private int userrole;
 
+    private String usergmail;
+
     private UserSessionManager() {
         isLoggedIn = false;
         username = "";
@@ -49,6 +51,14 @@ public class UserSessionManager {
 
     public void setUserrole(int userrole) {
         this.userrole = userrole;
+    }
+
+    public String getUsergmail() {
+        return usergmail;
+    }
+
+    public void setUsergmail(String usergmail) {
+        this.usergmail = usergmail;
     }
 
 }

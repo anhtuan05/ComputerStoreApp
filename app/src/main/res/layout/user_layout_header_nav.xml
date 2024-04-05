@@ -12,19 +12,21 @@
         android:src="@mipmap/ic_launcher" />
 
     <TextView
+        android:id="@+id/show_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Username"
-        android:textColor="@color/black"
+        android:textColor="@color/blue_dark"
         android:textSize="@dimen/text_size_p" />
 
     <TextView
+        android:id="@+id/show_usergmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="user@gmail.com"
-        android:textColor="@color/black"
+        android:textColor="@color/blue_dark"
         android:textSize="@dimen/text_size_p" />
 
 </LinearLayout>

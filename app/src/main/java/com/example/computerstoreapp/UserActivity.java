@@ -17,20 +17,25 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.computerstoreapp.database.Product;
 import com.example.computerstoreapp.fragment.UserCartFragment;
 import com.example.computerstoreapp.fragment.UserHistoryFragment;
 import com.example.computerstoreapp.fragment.UserHomeFragment;
+import com.example.computerstoreapp.fragment.UserProductDetailFragment;
 import com.google.android.material.navigation.NavigationView;
 
-public class UserActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class UserActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, UserProductDetailFragment.OnAddToCartListener {
 
     private DrawerLayout user_mDrawerLayout;
 
     private static final int FRAGMENT_HOME = 0;
     private static final int FRAGMENT_CART = 1;
     private static final int FRAGMENT_HISTORY = 2;
-
     private int mCurrentFragment = FRAGMENT_HOME;
+
+    private UserHomeFragment userHomeFragment;
+    private UserCartFragment userCartFragment;
+    private UserHistoryFragment userHistoryFragment;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -51,7 +56,11 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.user_navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        replaceFragment(new UserHomeFragment());
+        userHomeFragment = new UserHomeFragment();
+        userCartFragment = new UserCartFragment();
+        userHistoryFragment = new UserHistoryFragment();
+
+        replaceFragment(userHomeFragment);
         navigationView.getMenu().findItem(R.id.user_nav_home).setChecked(true);
 
         View headerView = navigationView.getHeaderView(0);
@@ -74,22 +83,22 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
 
         } else if (id == R.id.user_nav_home) {
 
-            if (mCurrentFragment != FRAGMENT_HOME){
-                replaceFragment(new UserHomeFragment());
+            if (mCurrentFragment != FRAGMENT_HOME) {
+                replaceFragment(userHomeFragment);
                 mCurrentFragment = FRAGMENT_HOME;
             }
 
         } else if (id == R.id.user_nav_cart) {
 
-            if (mCurrentFragment != FRAGMENT_CART){
-                replaceFragment(new UserCartFragment());
+            if (mCurrentFragment != FRAGMENT_CART) {
+                replaceFragment(userCartFragment);
                 mCurrentFragment = FRAGMENT_CART;
             }
 
         } else if (id == R.id.user_nav_history) {
 
-            if (mCurrentFragment != FRAGMENT_HISTORY){
-                replaceFragment(new UserHistoryFragment());
+            if (mCurrentFragment != FRAGMENT_HISTORY) {
+                replaceFragment(userHistoryFragment);
                 mCurrentFragment = FRAGMENT_HISTORY;
             }
 
@@ -107,10 +116,9 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        if (user_mDrawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (user_mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             user_mDrawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else {
+        } else {
             super.onBackPressed();
         }
     }
@@ -128,5 +136,17 @@ public class UserActivity extends AppCompatActivity implements NavigationView.On
         finish(); // Đóng activity hiện tại
     }
 
+    @Override
+    public void onAddToCart(Product product) {
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("product_add_to_cart", product);
 
+        userCartFragment.setArguments(bundle);
+
+        replaceFragment(userCartFragment);
+
+        NavigationView navigationView = findViewById(R.id.user_navigation_view);
+        navigationView.getMenu().findItem(R.id.user_nav_cart).setChecked(true);
+        mCurrentFragment = FRAGMENT_CART;
+    }
 }

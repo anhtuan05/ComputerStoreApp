@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/img_product_cart"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/defaultimg" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name_product_cart"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="RAM RAM RAM"
+            android:textSize="@dimen/text_size_title2"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/price_product_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="500 000 "
+            android:textColor="@color/green"
+            android:textSize="@dimen/text_size_p" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnDecrease"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:onClick="decreaseQuantity"
+            android:text="-"
+            android:textSize="@dimen/text_size_title2" />
+
+        <EditText
+            android:id="@+id/quantityEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:background="@drawable/edittext_custom"
+            android:digits="0123456789"
+            android:inputType="number"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="6dp"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btnIncrease"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:onClick="increaseQuantity"
+            android:text="+"
+            android:textSize="@dimen/text_size_title2" />
+    </LinearLayout>
+</LinearLayout>

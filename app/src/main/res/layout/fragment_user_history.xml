@@ -6,10 +6,12 @@
     android:padding="20dp"
     android:background="@color/orange">
 
-    <TextView
+    <Button
+
+        android:id="@+id/btnadd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HISTORY"
+        android:text="ADD"
         android:textSize="@dimen/text_size_title"/>
 
 </LinearLayout>

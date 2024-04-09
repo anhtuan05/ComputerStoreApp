@@ -1,0 +1,65 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="back"
+            android:backgroundTint="@color/blue_dark"/>
+
+        <ImageView
+            android:id="@+id/img_product_detail"
+            android:layout_width="350dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:src="@drawable/defaultimg" />
+
+        <TextView
+            android:id="@+id/name_product_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="NAME"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_product_detail"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/price_product_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="aaaa"
+            android:textColor="@color/green"
+            android:textSize="@dimen/text_size_p"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/description_product_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_p" />
+
+        <Button
+            android:id="@+id/btn_add_to_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/add_to_cart" />
+    </LinearLayout>
+
+</ScrollView>

@@ -5,8 +5,10 @@
     <string name="user_nav_shopping_history">History</string>
     <string name="user_nav_account">Account</string>
     <string name="user_nav_logout">Logout</string>
+    <string name="action_search">Search</string>
     
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="add_to_cart">ADD TO CART</string>
 
 </resources>

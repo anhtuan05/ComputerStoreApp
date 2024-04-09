@@ -2,14 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    android:background="@color/yellow">
+    android:background="@color/white"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/user_recyclerview_products_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/layout_order"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CART"
-        android:textSize="@dimen/text_size_title"/>
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:visibility="visible">
 
+        <EditText
+            android:id="@+id/address_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_custom"
+            android:padding="10dp"
+            android:hint="Address"/>
+
+        <Button
+            android:id="@+id/btn_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Order" />
+
+    </LinearLayout>
 </LinearLayout>

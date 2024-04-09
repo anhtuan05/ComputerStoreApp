@@ -37,9 +37,9 @@
             android:layout_gravity="bottom"
             android:padding="6dp"
             android:text="500 000đ"
-            android:textColor="@color/red"
+            android:textColor="@color/green"
             android:textSize="@dimen/text_size_p"
-            android:textStyle="italic" />
+            android:textStyle="italic|bold" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

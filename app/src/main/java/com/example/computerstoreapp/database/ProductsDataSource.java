@@ -49,6 +49,16 @@ public class ProductsDataSource {
         return insertId;
     }
 
+    public void updateProductQuantity(int productId, int newQuantity) {
+        ContentValues values = new ContentValues();
+        values.put(ComputerStoreSQLiteHelper.COLUMN_QUANTITY, newQuantity);
+
+        String selection = ComputerStoreSQLiteHelper.COLUMN_PRODUCTID + " = ?";
+        String[] selectionArgs = {String.valueOf(productId)};
+
+        database.update(ComputerStoreSQLiteHelper.TABLE_PRODUCTS, values, selection, selectionArgs);
+    }
+
     public List<Product> getListALlProducts() {
         List<Product> products = new ArrayList<>();
         Cursor cursor = database.query(ComputerStoreSQLiteHelper.TABLE_PRODUCTS, null, null, null, null, null, null);

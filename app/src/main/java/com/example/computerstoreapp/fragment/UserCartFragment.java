@@ -147,7 +147,7 @@ public class UserCartFragment extends Fragment {
                     }
 
                 } else {
-                    Toast.makeText(getContext(), "No Product", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Order Failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
